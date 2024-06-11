@@ -1,32 +1,81 @@
-/* HEADER */
-
+/* CSS global pour le menu et le header */
 .header-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 90px;
     background-color: #fff;
+    min-height: 150px;
+    position: relative;
+    overflow: visible;
+    flex-wrap: nowrap;
+    width: 100%; 
+    box-sizing: border-box; /* Inclure les bordures et le padding dans la largeur totale */
 }
 
 .header-titles-wrapper {
     display: flex;
     align-items: center;
+    height: 100%;
+    flex-shrink: 0;
 }
 
-.nav-menu {
+.header-navigation-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+    flex-grow: 1; /* Permettre au menu de prendre l'espace disponible */
+    flex-wrap: nowrap;
+    width: 100%; 
+}
+
+.primary-menu-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex-wrap: nowrap;
+    flex-grow: 1; 
+    justify-content: flex-end; 
+    width: 100%; 
+}
+
+.primary-menu {
+    display: flex;
+    align-items: center;
+    height: 100%;
     list-style: none;
     padding: 0;
     margin: 0;
+    flex-wrap: nowrap;
+    flex-grow: 1; 
+    justify-content: space-between; 
+    width: 100%; 
+}
+
+.nav-menu {
     display: flex;
+    align-items: center;
+    height: 100%;
+    flex-wrap: nowrap; /* Ne pas permettre au menu de passer à la ligne */
 }
 
 .nav-menu li {
     margin-right: 20px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex-shrink: 1;
 }
 
 .nav-menu a {
     text-decoration: none;
     color: #333;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    white-space: nowrap;
+    flex-grow: 1; 
 }
 
 .header-navigation-wrapper .nav-menu a {
@@ -37,19 +86,142 @@
     color: black !important;
 }
 
-@media (max-width: 768px) {
-    .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+.primary-menu a:hover {
+    text-decoration: none;
+}
 
-    .nav-menu {
-        flex-direction: column;
-        align-items: flex-start;
+/* Styles spécifiques pour les écrans de plus de 1136px */
+@media (min-width: 1137px) {
+    .header-inner {
+        padding: 20px 90px; 
     }
 
     .nav-menu li {
-        margin-right: 0;
-        margin-bottom: 10px;
+        margin-right: 20px; /* Ajuste la marge entre les éléments de menu */
     }
+}
+/* Ajustement des tailles pour les écrans entre 769px et 1136px */
+@media (max-width: 1136px) {
+    .nav-menu li {
+        margin-right: 10px; /* Marge réduite pour les petits écrans */
+    }
+
+    .primary-menu a {
+        font-size: 14px; /* Réduit la taille de la police */
+    }
+
+    .menu-commander a {
+        padding: 10px 20px; /* Réduit la taille du bouton */
+    }
+}
+
+/* Styles pour masquer le menu normal en dessous de 1000px et afficher le menu burger */
+
+@media (max-width: 999px) {
+    .primary-menu-wrapper,
+    .header-navigation-wrapper .primary-menu {
+        display: none; /* Masquer le menu normal */
+    }
+
+    .header-toggles .nav-toggle {
+        display: block; /* Afficher le menu burger */
+    }
+
+    .mobile-menu {
+        margin-top: 100px;
+    }
+}
+
+/* Styles pour afficher le menu normal au-dessus de 1000px et masquer le menu burger */
+@media (min-width: 1000px) {
+    .primary-menu-wrapper,
+    .header-navigation-wrapper .primary-menu {
+        display: flex; /* Afficher le menu normal */
+    }
+
+    .header-toggles .nav-toggle {
+        display: none; /* Masquer le menu burger */
+    }
+}
+
+
+/* Afficher le menu burger uniquement en dessous de 769px */
+@media (max-width: 768px) {
+    .nav-menu,
+    .primary-menu-wrapper {
+        display: none; /* Masquer le menu principal */
+    }
+
+    .mobile-nav-toggle {
+        display: block; /* Afficher le bouton burger */
+    }
+
+    .header-titles-wrapper {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .header-navigation-wrapper {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+/* Autres ajustements de style */
+.menu-nous-rencontrer a,
+.menu-admin a {
+    color: black !important;
+    padding-right: 20px;
+}
+
+.menu-commander {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-commander a {
+    background-color: #e0b9b4;
+    color: white !important;
+    display: block;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+.menu-commander a:hover {
+    background-color: #c02e44;
+}
+
+.menu-nous-rencontrer a:hover,
+.menu-admin a:hover {
+    transform: scale(0.85);
+    font-weight: bold;
+}
+
+/* Footer */
+
+#site-footer {
+    background-color: #f8f8f8;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-legal {
+    display: flex !important; /* important m'a permi de faire appliquer mon css au thème enfant */
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100px;
+    width: 100%;
+}
+
+.footer-legal-text {
+    font-size: 16px;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-legal-text a {
+    color: #000000;
 }

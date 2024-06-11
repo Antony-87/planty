@@ -16,3 +16,19 @@ function register_my_menus() {
     );
 }
 add_action('init', 'register_my_menus');
+
+// Ajout des classes personnalisées aux éléments du menu
+function add_additional_class_on_li($classes, $item, $args) {
+    if ($args->theme_location == 'primary') {
+        if ($item->title == 'Nous rencontrer') {
+            $classes[] = 'menu-nous-rencontrer';
+        } elseif ($item->title == 'Admin') {
+            $classes[] = 'menu-admin';
+        } elseif ($item->title == 'Commander') {
+            $classes[] = 'menu-commander';
+        }
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+?>

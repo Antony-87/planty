@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 90px;
+    padding: 20px 0; /* retire le padding horizontal */
     background-color: #fff;
     min-height: 150px;
     position: relative;
@@ -11,6 +11,14 @@
     flex-wrap: nowrap;
     width: 100%; 
     box-sizing: border-box; /* Inclure les bordures et le padding dans la largeur totale */
+}
+/* section inner pleine largeur */
+.section-inner {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
 }
 
 .header-titles-wrapper {
@@ -102,6 +110,7 @@
 }
 /* Ajustement des tailles pour les écrans entre 769px et 1136px */
 @media (max-width: 1136px) {
+    
     .nav-menu li {
         margin-right: 10px; /* Marge réduite pour les petits écrans */
     }
@@ -224,4 +233,21 @@
 
 .footer-legal-text a {
     color: #000000;
+}
+
+/* modification page d'accueil */
+
+.home .entry-title {
+    display: none;
+}
+
+/* Suppression de l'élément entry-header sur la page d'accueil */
+.home .entry-header {
+    display: none;
+}
+
+/* Ajustement du contenu de la page d'accueil pour remonter sous le header principal */
+.home .site-main {
+    margin-top: 0;
+    padding-top: 0;
 }

@@ -1,253 +1,421 @@
 /* CSS global pour le menu et le header */
+
+body {
+  background-color: #fff !important;
+}
+
 .header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0; /* retire le padding horizontal */
-    background-color: #fff;
-    min-height: 150px;
-    position: relative;
-    overflow: visible;
-    flex-wrap: nowrap;
-    width: 100%; 
-    box-sizing: border-box; /* Inclure les bordures et le padding dans la largeur totale */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0; /* retire le padding horizontal */
+  background-color: #fff;
+  min-height: 80px;
+  position: relative;
+  overflow: visible;
+  flex-wrap: nowrap;
+  width: 100%;
+  box-sizing: border-box !important; /* Inclure les bordures et le padding dans la largeur totale */
+}
+.custom-logo-link {
+  width: 300px;
 }
 /* section inner pleine largeur */
 .section-inner {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-    box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+  box-sizing: border-box;
 }
 
+.section-inner .post-meta {
+  display: none; 
+}
 .header-titles-wrapper {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-shrink: 0;
 }
 
 .header-navigation-wrapper {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    justify-content: flex-end;
-    flex-grow: 1; /* Permettre au menu de prendre l'espace disponible */
-    flex-wrap: nowrap;
-    width: 100%; 
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  flex-grow: 1; /* Permettre au menu de prendre l'espace disponible */
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .primary-menu-wrapper {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    flex-wrap: nowrap;
-    flex-grow: 1; 
-    justify-content: flex-end; 
-    width: 100%; 
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .primary-menu {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-wrap: nowrap;
-    flex-grow: 1; 
-    justify-content: space-between; 
-    width: 100%; 
+  display: flex;
+  align-items: center;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .nav-menu {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    flex-wrap: nowrap; /* Ne pas permettre au menu de passer à la ligne */
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-wrap: nowrap; /* Ne pas permettre au menu de passer à la ligne */
 }
 
 .nav-menu li {
-    margin-right: 20px;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    flex-shrink: 1;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-shrink: 1;
 }
 
 .nav-menu a {
-    text-decoration: none;
-    color: #333;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    white-space: nowrap;
-    flex-grow: 1; 
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;
+  flex-grow: 1;
 }
 
 .header-navigation-wrapper .nav-menu a {
-    color: #000;
+  color: #000;
 }
 
 .primary-menu a {
-    color: black !important;
+  color: black !important;
 }
 
 .primary-menu a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* Styles spécifiques pour les écrans de plus de 1136px */
 @media (min-width: 1137px) {
-    .header-inner {
-        padding: 20px 90px; 
-    }
+  .header-inner {
+    padding: 20px 120px;
+  }
 
-    .nav-menu li {
-        margin-right: 20px; /* Ajuste la marge entre les éléments de menu */
-    }
+  .nav-menu li {
+    margin-right: 20px; /* Ajuste la marge entre les éléments de menu */
+  }
 }
 /* Ajustement des tailles pour les écrans entre 769px et 1136px */
 @media (max-width: 1136px) {
-    
-    .nav-menu li {
-        margin-right: 10px; /* Marge réduite pour les petits écrans */
-    }
+  .nav-menu li {
+    margin-right: 10px; /* Marge réduite pour les petits écrans */
+  }
 
-    .primary-menu a {
-        font-size: 14px; /* Réduit la taille de la police */
-    }
+  .primary-menu a {
+    font-size: 14px; /* Réduit la taille de la police */
+  }
 
-    .menu-commander a {
-        padding: 10px 20px; /* Réduit la taille du bouton */
-    }
+  .menu-commander a {
+    padding: 10px 20px; /* Réduit la taille du bouton */
+  }
 }
 
 /* Styles pour masquer le menu normal en dessous de 1000px et afficher le menu burger */
 
 @media (max-width: 999px) {
-    .primary-menu-wrapper,
-    .header-navigation-wrapper .primary-menu {
-        display: none; /* Masquer le menu normal */
-    }
+  .primary-menu-wrapper,
+  .header-navigation-wrapper .primary-menu {
+    display: none; /* Masquer le menu normal */
+  }
 
-    .header-toggles .nav-toggle {
-        display: block; /* Afficher le menu burger */
-    }
+  .header-toggles .nav-toggle {
+    display: block; /* Afficher le menu burger */
+  }
 
-    .mobile-menu {
-        margin-top: 100px;
-    }
+  .mobile-menu {
+    margin-top: 100px;
+  }
 }
 
 /* Styles pour afficher le menu normal au-dessus de 1000px et masquer le menu burger */
 @media (min-width: 1000px) {
-    .primary-menu-wrapper,
-    .header-navigation-wrapper .primary-menu {
-        display: flex; /* Afficher le menu normal */
-    }
+  .primary-menu-wrapper,
+  .header-navigation-wrapper .primary-menu {
+    display: flex; /* Afficher le menu normal */
+  }
 
-    .header-toggles .nav-toggle {
-        display: none; /* Masquer le menu burger */
-    }
+  .header-toggles .nav-toggle {
+    display: none; /* Masquer le menu burger */
+  }
 }
-
 
 /* Afficher le menu burger uniquement en dessous de 769px */
 @media (max-width: 768px) {
-    .nav-menu,
-    .primary-menu-wrapper {
-        display: none; /* Masquer le menu principal */
-    }
+  .nav-menu,
+  .primary-menu-wrapper {
+    display: none; /* Masquer le menu principal */
+  }
 
-    .mobile-nav-toggle {
-        display: block; /* Afficher le bouton burger */
-    }
+  .mobile-nav-toggle {
+    display: block; /* Afficher le bouton burger */
+  }
 
-    .header-titles-wrapper {
-        width: 100%;
-        justify-content: space-between;
-    }
+  .header-titles-wrapper {
+    width: 100%;
+    justify-content: space-between;
+  }
 
-    .header-navigation-wrapper {
-        width: 100%;
-        justify-content: flex-end;
-    }
+  .header-navigation-wrapper {
+    width: 100%;
+    justify-content: flex-end;
+  }
 }
 
 /* Autres ajustements de style */
 .menu-nous-rencontrer a,
 .menu-admin a {
-    color: black !important;
-    padding-right: 20px;
+  color: black !important;
+  padding-right: 20px;
 }
 
 .menu-commander {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-commander a {
-    background-color: #e0b9b4;
-    color: white !important;
-    display: block;
-    padding: 10px 20px;
-    margin: 0;
+  background-color: #e0b9b4;
+  color: white !important;
+  display: block;
+  padding: 30px 50px;
+  margin: 0;
 }
 
 .menu-commander a:hover {
-    background-color: #c02e44;
+  background-color: #c02e44;
 }
 
 .menu-nous-rencontrer a:hover,
 .menu-admin a:hover {
-    transform: scale(0.85);
-    font-weight: bold;
+  transform: scale(0.85);
+  font-weight: bold;
 }
 
 /* Footer */
 
 #site-footer {
-    background-color: #f8f8f8;
-    padding: 40px 0;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  border: none;
+  font-family: Syne;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: center;
+  margin-top: 0 !important;
 }
 
-.footer-legal {
-    display: flex !important; /* important m'a permi de faire appliquer mon css au thème enfant */
-    justify-content: center !important;
-    align-items: center !important;
-    height: 100px;
-    width: 100%;
-}
-
-.footer-legal-text {
-    font-size: 16px;
-    color: #333;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.footer-legal-text a {
-    color: #000000;
+#site-footer a {
+  text-decoration: none;
+  color: #000;
 }
 
 /* modification page d'accueil */
 
 .home .entry-title {
-    display: none;
+  display: none;
 }
 
 /* Suppression de l'élément entry-header sur la page d'accueil */
 .home .entry-header {
-    display: none;
+  display: none;
 }
 
 /* Ajustement du contenu de la page d'accueil pour remonter sous le header principal */
 .home .site-main {
-    margin-top: 0;
-    padding-top: 0;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* formulaire page nous-rencontrer */
+
+.formulaire-contacter {
+  font-family: syne;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.formulaire-contacter h2 {
+  font-family: syne;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.bouton-envoyer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 70px;
+  padding-top: 50px;
+}
+
+.formulaire-contacter input[type="text"],
+.formulaire-contacter input[type="email"],
+.formulaire-contacter textarea {
+    border-radius: 7px; /* Coins arrondis de 7px */
+    margin-top: 10px; /* marge entre les labels et les pavés */
+}
+
+/* pavé message taille supérieure en hauteur */
+.formulaire-contacter textarea {
+  height: 230px;
+}
+
+.bouton-envoyer input[type="submit"] {
+  width: 200px; /* Largeur du bouton */
+  height: 55px; /* Hauteur du bouton */
+  background-color: #e0b9b4;
+  border-radius: 5px;
+  font-family: syne;
+  font-weight: 400;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.bouton-envoyer input[type="submit"]:hover {
+  background-color: #c02e44;
+  text-decoration: none; /* le texte n'est plus souligné au survol */
+}
+
+/* modification du conteneur du formulaire nous contacter */
+
+.e-con-inner {
+  padding-bottom: 0 !important; /* cannettes au bas du conteneur */
+}
+
+/* formulaire page commander */
+
+.item-commander {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.compteur {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centre le contenu horizontalement */
+  align-items: center; /* centre le contenu verticalement */
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+}
+
+.nombre_article {
+  width: 40px !important;
+  height: 55px !important;
+  display: flex;
+  padding: 0 !important;
+  text-align: center;
+}
+
+.barre-horizontale {
+  border: 1px solid white;
+}
+
+.bloc-commander {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bloc-commander h2 {
+  color: white; /* Couleur du texte */
+  font-size: 30px !important; /* Taille de la police */
+  font-weight: 700 !important; /* Épaisseur de la police */
+  font-family: syne !important;
+}
+.saisie-form {
+  color: white; /* Couleur du texte */
+  font-size: 20px !important; /* Taille de la police */
+  font-weight: 400 !important; /* Épaisseur de la police */
+  font-family: syne !important;
+  border-radius: 7px !important;
+}
+
+.bloc-commander .saisie-form input[type="text"],
+.bloc-commander .saisie-form input[type="email"],
+.bloc-commander .saisie-form input[type="textarea"] {
+  border-radius: 7px;
+  margin-top: 10px;
+}
+
+.barre-verticale {
+  border: 1px solid white;
+  margin-top: 100px;
+}
+
+.bouton-commander {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 80px;
+  padding-top: 50px;
+}
+
+.bouton-commander input[type="submit"] {
+  width: 200px; /* Largeur du bouton */
+  height: 55px; /* Hauteur du bouton */
+  background-color: #e0b9b4;
+  border-radius: 5px;
+  font-family: syne;
+  font-weight: 400;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.bouton-commander input[type="submit"]:hover {
+  background-color: #c02e44;
+  text-decoration: none; /* le texte n'est plus souligné au survol */
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; 
+  font-size: 20px;
+  font-weight: 800; 
+  font-family: syne;
+  width: 100%; /* s'assurer que le conteneur de texte prend toute la largeur */
+  white-space: nowrap; /* empêche les retours à la ligne automatique */
+  text-align: center; /* centre le texte horizontalement */
 }

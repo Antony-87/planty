@@ -12,13 +12,9 @@
  */
 
 ?>
-<footer id="site-footer" class="header-footer-group">
+<footer id="site-footer">
 
-    <div class="section-inner footer-legal">
-        <p class="footer-legal-text">
         <a href="<?php echo esc_url(home_url('/')); ?>">Mentions Légales</a>
-        </p>
-    </div><!-- .section-inner -->
 
 </footer><!-- #site-footer -->
 

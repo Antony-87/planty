@@ -41,7 +41,13 @@ function wpr_addons_templates_kit_page() {
     <header>
         <div class="wpr-templates-kit-logo">
             <div><img src="<?php echo !empty(get_option('wpr_wl_plugin_logo')) ? esc_url(wp_get_attachment_image_src(get_option('wpr_wl_plugin_logo'), 'full')[0]) : esc_url(WPR_ADDONS_ASSETS_URL .'img/logo-40x40.png'); ?>"></div>
-            <div class="back-btn"><?php printf( esc_html__('%s Back to Library', 'wpr-addons'), '<span class="dashicons dashicons-arrow-left-alt2"></span>'); ?></div>
+            <div class="back-btn">
+                <?php
+                // Translators: %s is replaced with an HTML span element containing a Dashicon
+                printf( esc_html__( '%s Back to Library', 'wpr-addons' ), '<span class="dashicons dashicons-arrow-left-alt2"></span>' );
+                ?>
+            </div>
+
         </div>
 
         <div class="wpr-templates-kit-search">
@@ -145,7 +151,12 @@ function wpr_addons_templates_kit_page() {
                     echo '<button class="import-kit button">'. esc_html__('Import Templates Kit', 'wpr-addons') .' <span class="dashicons dashicons-download"></span></button>';
                     echo '<a href="https://royal-elementor-addons.com/?ref=rea-plugin-backend-templates-upgrade-pro#purchasepro" class="get-access button" target="_blank">'. esc_html__('Upgrade to PRO', 'wpr-addons') .' <span class="dashicons dashicons-external"></span></a>';
                 ?>
-                <button class="import-template button"><?php printf( esc_html__( 'Import %s Template', 'wpr-addons' ), '<strong></strong>' ); ?></button>
+                <button class="import-template button">
+                    <?php
+                    // Translators: %s is replaced with an HTML <strong> element
+                    printf( esc_html__( 'Import %s Template', 'wpr-addons' ), '<strong></strong>' );
+                    ?>
+                </button>
                 
             </div>
         </footer>
@@ -902,6 +913,42 @@ function custom_upload_mimes( $mimes ) {
 }
 
 add_filter( 'upload_mimes', 'custom_upload_mimes', 99 );
+
+/**
+* Sanitize SVG files on upload.
+*/
+function wpr_sanitize_svg_on_upload($file) {
+    if ($file['type'] === 'image/svg+xml') {
+        $file_content = file_get_contents($file['tmp_name']);
+        $sanitized_content = sanitize_svg($file_content);
+        file_put_contents($file['tmp_name'], $sanitized_content);
+    }
+    return $file;
+}
+
+add_filter('wp_handle_upload_prefilter', 'wpr_sanitize_svg_on_upload');
+ 
+ /**
+ * Sanitize SVG content.
+ *
+ * @param string $svg_content The SVG content to sanitize.
+ * @return string The sanitized SVG content.
+ */
+function sanitize_svg($svg_content) {
+    $dom = new DOMDocument();
+    $dom->loadXML($svg_content, LIBXML_NOENT | LIBXML_DTDLOAD);
+ 
+    // Remove scripts
+    $scripts = $dom->getElementsByTagName('script');
+    while ($scripts->length > 0) {
+        $scripts->item(0)->parentNode->removeChild($scripts->item(0));
+    }
+ 
+    // Remove external entities
+    // Additional sanitization can be added here as needed
+ 
+    return $dom->saveXML();
+}
 
 function real_mime_types_5_1_0( $defaults, $file, $filename, $mimes, $real_mime ) {
     return real_mimes( $defaults, $filename );

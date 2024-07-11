@@ -1,10 +1,10 @@
 === WooCommerce ===
 Contributors: automattic, woocommerce, mikejolley, jameskoster, claudiosanches, rodrigosprimo, peterfabian1000, vedjain, jamosova, obliviousharmony, konamiman, sadowski, wpmuguru, royho, barryhughes-1, claudiulodro, tiagonoronha, ryelle, levinmedia, aljullu, nerrad, joshuawold, assassinateur, haszari, mppfeiffer, nielslange, opr18, ralucastn, tjcafferkey, danielwrobert, patriciahillebrandt, albarin, dinhtungdu, imanish003, karolmanijak, sunyatasattva, alexandrelara, gigitux, danieldudzic, samueljseay, alexflorisca, opr18, tarunvijwani, pauloarromba, saadtarhi, bor0, kloon, coreymckrill, jorgeatorres, leifsinger
-Tags: online store, ecommerce, shop, shopping cart, sell online, storefront, checkout, payments, woo, woo commerce, e-commerce, store
+Tags: online store, ecommerce, shop, shopping cart, sell online
 Requires at least: 6.4
 Tested up to: 6.5
 Requires PHP: 7.4
-Stable tag: 8.8.3
+Stable tag: 9.0.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -165,15 +165,11 @@ WooCommerce comes with some sample data you can use to see how products look; im
 
 == Changelog ==
 
-= 8.9.1 2024-05-21 =
+= 9.0.2 2024-06-24 =
 
 **WooCommerce**
 
-* Fix - Automated installation of the Legacy REST API plugin should only happen once. After that, it must be installed manually (if needed). [#47563](https://github.com/woocommerce/woocommerce/pull/47563)
-* Fix - Fixes a crash in the modal block editor when the Add button is clicked with Gutenberg 18.3.0 and later [#47561](https://github.com/woocommerce/woocommerce/pull/47561)
-* Fix - Fix warning when loading guest sessions from previous sessions. [#47514](https://github.com/woocommerce/woocommerce/pull/47514)
-* Fix - Prevent calling woocommerce.com on empty update-check and update-check-public payload. [#47507](https://github.com/woocommerce/woocommerce/pull/47507)
+* Fix - Revert 46857 to preserve backcompat with earlier WC versions. [#48753](https://github.com/woocommerce/woocommerce/pull/48753)
 
 
 [See changelog for all versions](https://raw.githubusercontent.com/woocommerce/woocommerce/trunk/changelog.txt).
-/trunk/changelog.txt).

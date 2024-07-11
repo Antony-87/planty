@@ -31,4 +31,24 @@ function add_additional_class_on_li($classes, $item, $args) {
     return $classes;
 }
 add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+
+// Affiche le lien "Admin" uniquement pour les utilisateurs connectés.
+
+function show_admin_link_for_logged_in_users($items, $args) {
+    if ($args->theme_location == 'primary') {
+        foreach ($items as $key => $item) {
+            if ($item->title == 'Admin') {
+                if (!is_user_logged_in()) {
+                    unset($items[$key]);
+                } else {
+                    // Changer l'URL du lien "Admin" pour pointer vers le tableau de bord d'administration
+                    $item->url = admin_url();
+                }
+            }
+        }
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_objects', 'show_admin_link_for_logged_in_users', 10, 2);
+
 ?>

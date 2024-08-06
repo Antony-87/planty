@@ -120,6 +120,15 @@ body {
     margin-right: 20px; /* Ajuste la marge entre les éléments de menu */
   }
 }
+
+/* Styles specifique pour les écrans Laptop 1024px */
+@media screen and (max-width: 1024px) {
+   .section-inner {
+  padding-left: 20px;
+  padding-right: 40px;
+  }
+}
+
 /* Ajustement des tailles pour les écrans entre 769px et 1136px */
 @media (max-width: 1136px) {
   .nav-menu li {
@@ -131,7 +140,7 @@ body {
   }
 
   .menu-commander a {
-    padding: 10px 20px; /* Réduit la taille du bouton */
+   
   }
 }
 
@@ -184,7 +193,115 @@ body {
     width: 100%;
     justify-content: flex-end;
   }
+
+  .overlay-text p {
+    font-size: 5px;
+  }
 }
+
+/* ajustement sur les tailles écran 320px à 360px */
+@media (min-width: 320px) and (max-width: 360px) {
+  a.custom-logo-link {
+    padding-right: 70px;
+  }
+}
+  .elementor-27 .elementor-element.elementor-element-4f3edf3.elementor-element {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+  .bouton-envoyer input[type="submit"] {
+    margin-right: 0px;
+  }
+
+/* ajustement sur les tailles écrans entre 361px et 400px */
+@media (min-width: 361px) and (max-width: 400px) {
+  .elementor-element.elementor-element-86d2be6.elementor-widget.elementor-widget-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+    .elementor-heading-title.elementor-size-default {
+      font-size: calc(100% + 1vw);
+      line-height: 1.2;
+      word-wrap: break-word;
+      max-width: 90%; /* Forcer le passage à la ligne */
+    }
+    .elementor-26 .elementor-element.elementor-element-22c5069 .elementor-heading-title {
+      font-size: calc(100% + 3vw); /* 3vw permet d'avoir une taille de police Fraise correcte */
+      line-height: 1.2;
+      word-wrap: break-word;
+      max-width: 90%; /* Forcer le passage à la ligne */
+      white-space: nowrap; /* Empêcher le passage à la ligne pour le mot FRAISE */
+
+    }
+  }
+
+  /* ajustement sur les tailles écrans entre 46Opx et 767px */
+@media (min-width: 460px) and (max-width: 767px) {
+  .elementor-26 .elementor-element.elementor-element-daf9cc0 img {
+    width: 35%; /* Ajustez cette valeur selon vos besoins */
+    height: auto; /* Maintient le ratio de l'image */
+    max-width: 80%; /* S'assurer que l'image ne dépasse pas son conteneur */
+    margin-right: 50px; /* Ajouter de l'espace autour de l'image, ajustez cette valeur selon vos besoins */
+    margin-bottom: 100px;
+   
+  }
+  .elementor-26 .elementor-element.elementor-element-6780d00 img {
+    width: 35%; /* Ajustez cette valeur selon vos besoins */
+    height: auto; /* Maintient le ratio de l'image */
+    max-width: 80%; /* S'assurer que l'image ne dépasse pas son conteneur */
+    margin-right: 50px; /* Ajouter de l'espace autour de l'image, ajustez cette valeur selon vos besoins */
+    margin-bottom: 100px; 
+  }
+  .elementor-26 .elementor-element.elementor-element-b9c0b0d img {
+    width: 35%; /* Ajustez cette valeur selon vos besoins */
+    height: auto; /* Maintient le ratio de l'image */
+    max-width: 80%; /* S'assurer que l'image ne dépasse pas son conteneur */
+    margin-right: 50px; /* Ajouter de l'espace autour de l'image, ajustez cette valeur selon vos besoins */
+    margin-bottom: 120px; 
+  }
+}
+
+/* ajustement media a 750px max  */
+@media screen and (max-width: 750px) {
+  .elementor-27 .elementor-element.elementor-element-bf00d50 > .elementor-widget-container {
+margin: 0;
+padding: 0;
+}
+
+.bloc-commander 
+.bloc-gauche 
+.bloc-droite {
+  display: flex;
+  margin: 0;
+  padding: O;
+  align-items: center;
+  font-size: 15px !important;
+}
+
+.barre-verticale {
+  margin: 5px;
+}
+
+.bloc-gauche h2 {
+  font-size :15px;
+}
+}
+
+/* test bouton commmander 320px à 399px */
+@media (min-width: 320px) and (max-width: 399px) {
+  .bouton-commander input[type="submit"] {
+    margin-right: 70px;
+  }
+  .bouton-envoyer input[type="submit"] {
+    margin-right: 70px;
+  }
+}
+
+
 
 /* Autres ajustements de style */
 .menu-nous-rencontrer a,
@@ -204,8 +321,11 @@ body {
   background-color: #e0b9b4;
   color: white !important;
   display: block;
-  padding: 30px 50px;
   margin: 0;
+  height: 80px;
+  width: 200px;
+  text-align: center;
+  line-height: 80px;
 }
 
 .menu-commander a:hover {
@@ -316,6 +436,7 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 50px;
+  flex-wrap: wrap;
 }
 
 .compteur {
@@ -368,7 +489,7 @@ body {
 
 .barre-verticale {
   border: 1px solid white;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .bouton-commander {
@@ -376,7 +497,8 @@ body {
   justify-content: center;
   margin-top: 10px;
   margin-left: 80px;
-  padding-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 
 .bouton-commander input[type="submit"] {

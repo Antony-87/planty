@@ -8,14 +8,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0; /* retire le padding horizontal */
+  padding: 20px 0; 
   background-color: #fff;
   min-height: 80px;
   position: relative;
   overflow: visible;
   flex-wrap: nowrap;
   width: 100%;
-  box-sizing: border-box !important; /* Inclure les bordures et le padding dans la largeur totale */
+  box-sizing: border-box !important;
 }
 .custom-logo-link {
   width: 300px;
@@ -77,7 +77,7 @@ body {
   display: flex;
   align-items: center;
   height: 100%;
-  flex-wrap: nowrap; /* Ne pas permettre au menu de passer à la ligne */
+  flex-wrap: nowrap; 
 }
 
 .nav-menu li {
@@ -111,13 +111,13 @@ body {
 }
 
 /* Styles spécifiques pour les écrans de plus de 1136px */
-@media (min-width: 1137px) {
+@media screen and (min-width: 1137px) {
   .header-inner {
     padding: 20px 120px;
   }
 
   .nav-menu li {
-    margin-right: 20px; /* Ajuste la marge entre les éléments de menu */
+    margin-right: 20px; 
   }
 }
 
@@ -130,23 +130,19 @@ body {
 }
 
 /* Ajustement des tailles pour les écrans entre 769px et 1136px */
-@media (max-width: 1136px) {
+@media screen and (max-width: 1136px) {
   .nav-menu li {
     margin-right: 10px; /* Marge réduite pour les petits écrans */
   }
 
   .primary-menu a {
-    font-size: 14px; /* Réduit la taille de la police */
-  }
-
-  .menu-commander a {
-   
+    font-size: 14px; 
   }
 }
 
 /* Styles pour masquer le menu normal en dessous de 1000px et afficher le menu burger */
 
-@media (max-width: 999px) {
+@media screen and (max-width: 999px) {
   .primary-menu-wrapper,
   .header-navigation-wrapper .primary-menu {
     display: none; /* Masquer le menu normal */
@@ -162,7 +158,7 @@ body {
 }
 
 /* Styles pour afficher le menu normal au-dessus de 1000px et masquer le menu burger */
-@media (min-width: 1000px) {
+@media screen and (min-width: 1000px) {
   .primary-menu-wrapper,
   .header-navigation-wrapper .primary-menu {
     display: flex; /* Afficher le menu normal */
@@ -173,13 +169,13 @@ body {
   }
 }
 
-/* Afficher le menu burger uniquement en dessous de 769px */
-@media (max-width: 768px) {
+/* Afficher le menu burger et autres uniquement en dessous de 769px */
+@media screen and (max-width: 768px) {
   .nav-menu,
   .primary-menu-wrapper {
     display: none; /* Masquer le menu principal */
-  }
-
+  } 
+    
   .mobile-nav-toggle {
     display: block; /* Afficher le bouton burger */
   }
@@ -242,25 +238,25 @@ body {
   /* ajustement sur les tailles écrans entre 46Opx et 767px */
 @media (min-width: 460px) and (max-width: 767px) {
   .elementor-26 .elementor-element.elementor-element-daf9cc0 img {
-    width: 35%; /* Ajustez cette valeur selon vos besoins */
+    width: 35%; 
     height: auto; /* Maintient le ratio de l'image */
     max-width: 80%; /* S'assurer que l'image ne dépasse pas son conteneur */
-    margin-right: 50px; /* Ajouter de l'espace autour de l'image, ajustez cette valeur selon vos besoins */
+    margin-right: 50px; 
     margin-bottom: 100px;
    
   }
   .elementor-26 .elementor-element.elementor-element-6780d00 img {
-    width: 35%; /* Ajustez cette valeur selon vos besoins */
-    height: auto; /* Maintient le ratio de l'image */
-    max-width: 80%; /* S'assurer que l'image ne dépasse pas son conteneur */
-    margin-right: 50px; /* Ajouter de l'espace autour de l'image, ajustez cette valeur selon vos besoins */
+    width: 35%; 
+    height: auto; 
+    max-width: 80%; 
+    margin-right: 50px; 
     margin-bottom: 100px; 
   }
   .elementor-26 .elementor-element.elementor-element-b9c0b0d img {
-    width: 35%; /* Ajustez cette valeur selon vos besoins */
-    height: auto; /* Maintient le ratio de l'image */
-    max-width: 80%; /* S'assurer que l'image ne dépasse pas son conteneur */
-    margin-right: 50px; /* Ajouter de l'espace autour de l'image, ajustez cette valeur selon vos besoins */
+    width: 35%; 
+    height: auto; 
+    max-width: 80%; 
+    margin-right: 50px; 
     margin-bottom: 120px; 
   }
 }
@@ -277,7 +273,7 @@ padding: 0;
 .bloc-droite {
   display: flex;
   margin: 0;
-  padding: O;
+  padding: 0;
   align-items: center;
   font-size: 15px !important;
 }
@@ -291,7 +287,7 @@ padding: 0;
 }
 }
 
-/* test bouton commmander 320px à 399px */
+/* bouton commmander 320px à 399px */
 @media (min-width: 320px) and (max-width: 399px) {
   .bouton-commander input[type="submit"] {
     margin-right: 70px;
@@ -300,8 +296,6 @@ padding: 0;
     margin-right: 70px;
   }
 }
-
-
 
 /* Autres ajustements de style */
 .menu-nous-rencontrer a,
@@ -399,7 +393,7 @@ padding: 0;
 .formulaire-contacter input[type="text"],
 .formulaire-contacter input[type="email"],
 .formulaire-contacter textarea {
-    border-radius: 7px; /* Coins arrondis de 7px */
+    border-radius: 7px; 
     margin-top: 10px; /* marge entre les labels et les pavés */
 }
 
@@ -409,8 +403,8 @@ padding: 0;
 }
 
 .bouton-envoyer input[type="submit"] {
-  width: 200px; /* Largeur du bouton */
-  height: 55px; /* Hauteur du bouton */
+  width: 200px; 
+  height: 55px; 
   background-color: #e0b9b4;
   border-radius: 5px;
   font-family: syne;
@@ -435,8 +429,18 @@ padding: 0;
 .item-commander {
   display: flex;
   justify-content: space-between;
-  gap: 50px;
+  gap: 10px;
   flex-wrap: wrap;
+}
+
+@media (max-width: 905px) {
+  .item-commander {
+    justify-content: center;
+  }
+  .item-commander > div {
+    flex: 0 1 calc(50% - 10px); /* Chaque élément prendra la moitié de la largeur moins le gap */
+    margin-bottom: 10px; /* Ajoute un espace en bas pour éviter que les éléments se touchent verticalement */
+  }
 }
 
 .compteur {
@@ -467,15 +471,15 @@ padding: 0;
 }
 
 .bloc-commander h2 {
-  color: white; /* Couleur du texte */
-  font-size: 30px !important; /* Taille de la police */
-  font-weight: 700 !important; /* Épaisseur de la police */
-  font-family: syne !important;
+  color: white; 
+  font-size: 30px !important; 
+  font-weight: 700 !important; 
 }
+
 .saisie-form {
-  color: white; /* Couleur du texte */
-  font-size: 20px !important; /* Taille de la police */
-  font-weight: 400 !important; /* Épaisseur de la police */
+  color: white; 
+  font-size: 20px !important; 
+  font-weight: 400 !important; 
   font-family: syne !important;
   border-radius: 7px !important;
 }
@@ -485,6 +489,36 @@ padding: 0;
 .bloc-commander .saisie-form input[type="textarea"] {
   border-radius: 7px;
   margin-top: 10px;
+}
+
+/* Gérer les marges entre 750px et 920px */
+@media (min-width: 750px) and (max-width: 920px) {
+  .barre-verticale {
+    margin-left: 2px; 
+    margin-right: 2px; 
+  }
+  
+  .bloc-gauche, .bloc-droite {
+    padding-left: 2px; 
+    padding-right: 2px; 
+  }
+}
+
+/* Réduction de la taille de police en dessous de 587px */
+@media (max-width: 587px) {
+  .bloc-commander h2 {
+    font-size: 16px !important; 
+  }
+}
+   .saisie-form {
+    font-size: 9px !important; 
+}
+
+/* Pour les écrans en dessous de 349px */
+@media screen and (max-width: 349px) {
+  .saisie-form label {
+    font-size: 12px; /* Taille de la police spécifiée pour les très petits écrans */
+  }
 }
 
 .barre-verticale {
@@ -502,8 +536,8 @@ padding: 0;
 }
 
 .bouton-commander input[type="submit"] {
-  width: 200px; /* Largeur du bouton */
-  height: 55px; /* Hauteur du bouton */
+  width: 200px; 
+  height: 55px; 
   background-color: #e0b9b4;
   border-radius: 5px;
   font-family: syne;
